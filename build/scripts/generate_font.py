@@ -149,7 +149,7 @@ subprocess.call('mv ' + fontfile + '.eotlite ' + fontfile + '.eot', shell=True)
 subprocess.call('ttfautohint -s -f -n ' + fontfile + '.ttf ' + fontfile + '-hinted.ttf > /dev/null 2>&1 && mv ' + fontfile + '-hinted.ttf ' + fontfile + '.ttf', shell=True)
 
 # WOFF2 Font
-subprocess.call('woff2_compress ' + fontfile + '.ttf', shell=True)
+subprocess.call('./woff2/woff2_compress ' + fontfile + '.ttf', shell=True)
 
 manifest_data['icons'] = sorted(build_data['icons'], key=lambda k: k['name'])
 build_data['icons'] = sorted(build_data['icons'], key=lambda k: k['name'])
